@@ -4,3 +4,4 @@
 3、根据需要修改OSAL\osal\osal_memory.h文件中的内存池大小定义，文件中osalMemHdr_t类型需要确保长度为16bit或以上，非8位单片机需要设定内存池的字节对齐；
 4、添加任务函数中的任务优先级数值大的任务则优先级高；
 5、根据需要修改OSAL\include\osal_memory.h文件中的OSALMEM_METRICS定义，有效则开启内存统计功能；
+
