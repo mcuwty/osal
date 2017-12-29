@@ -21,9 +21,7 @@ typedef struct OSALTaskREC
 extern OsalTadkREC_t  *TaskActive;
 
 extern void osal_start_system(void);
-extern void osal_add_Task(	pTaskInitFn pfnInit,
-                           	pTaskEventHandlerFn pfnEventProcessor,
-                           	uint8 taskPriority);
+extern void osal_add_Task(pTaskInitFn pfnInit,pTaskEventHandlerFn pfnEventProcessor,uint8 taskPriority);
 extern void osal_Task_init(void);
 extern void osal_init_TaskHead(void);
 extern OsalTadkREC_t *osalNextActiveTask(void);

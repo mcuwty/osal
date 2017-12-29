@@ -43,7 +43,6 @@ uint16 Serial_Task_EventProcess(uint8 task_id,uint16 task_event)
 	      	switch ( MSGpkt->hdr.event )  	//判断消息事件
 	      	{
 	          	case OSAL_PRINTF:
-	          		//Usart2_Printf("OSAL printf : %s",((General_SerialData_t*)MSGpkt)->Data);
 	          		break;
 
 	        	default:
@@ -69,6 +68,7 @@ uint16 Serial_Task_EventProcess(uint8 task_id,uint16 task_event)
 	return 0;
 }
 
+//消息邮箱使用例子
 void osal_printf(char *format, ...)
 {
 	__va_list arg_ptr;
@@ -91,3 +91,4 @@ void osal_printf(char *format, ...)
 		osal_msg_send( Serial_TaskID, (uint8 *)string );
 	}	
 }
+
