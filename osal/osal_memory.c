@@ -25,7 +25,7 @@
 //内存分配返回的是一个指向分配区域的指针，指针的长度是内存控制头和内存对齐方式中较大的一个。
 //并且这个长度也是最小分配单元的长度。在OSAL中它的长度是16bit。
 //此处需要根据实际编译环境修改，确保osalMemHdr_t长度为16bit或以上
-typedef uint16  osalMemHdr_t;
+typedef halDataAlign_t  osalMemHdr_t;
 
 /*********************************************************************
  * CONSTANTS
@@ -60,8 +60,8 @@ static osalMemHdr_t *ff2;  // First free block after the small-block bucket.
 #if defined( EXTERNAL_RAM )
 static byte  *theHeap = (byte *)EXT_RAM_BEG;
 #else
-static halDataAlign_t  _theHeap[ MAXMEMHEAP / sizeof(halDataAlign_t) ];
-//static __align(32) halDataAlign_t  _theHeap[ MAXMEMHEAP / sizeof( halDataAlign_t ) ];
+static halDataAlign_t _theHeap[ MAXMEMHEAP / sizeof(halDataAlign_t) ];
+// static __align(32) halDataAlign_t _theHeap[ MAXMEMHEAP / sizeof( halDataAlign_t ) ];
 //根据实际使用的芯片设定内存对齐，__align(32)，非常重要！！！
 static byte  *theHeap = (byte *)_theHeap;
 #endif

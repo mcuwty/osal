@@ -1,9 +1,6 @@
 #ifndef TYPE_H
 #define TYPE_H
 
-//此处添加实际使用芯片的对应头文件
-// #include "stm32f0xx.h"
-
 #define ZSUCCESS                  1
 #define INVALID_TASK              2
 #define INVALID_MSG_POINTER       3

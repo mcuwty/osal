@@ -2,6 +2,8 @@
 #include "osal_memory.h"
 #include "osal_event.h"
 
+#define SYS_EVENT_MSG               0x8000
+
 /*********************************************************************
  * @fn osal_msg_allocate
  *

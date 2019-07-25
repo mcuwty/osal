@@ -1,12 +1,14 @@
-/****************************************************************************************
- * 文件名  ：osal_main.c
- * 描述    ：osal操作系统运行主函数，添加任务在此文件中添加
- * 开发平台：
- * 库版本  ：
- ***************************************************************************************/
+/**
+ * @file osal_main.c
+ * @brief osal操作系统运行主函数，添加任务在此文件中添加
+ * @version 0.1
+ * @date 2019-07-25
+ * @author WatWu
+ */
+
 #include "task_event.h"
 
-int osal_main(void)
+void osal_main(void)
 {
     //系统硬件、外设等初始化
 
@@ -17,7 +19,9 @@ int osal_main(void)
     osal_init_system();
 
     //添加任务
-    osal_add_Task(Serial_Task_Init, Serial_Task_EventProcess, 1);
+    osal_add_Task(print_task_init, print_task_event_process, 1);
+    osal_add_Task(statistics_task_init, statistics_task_event_process, 2);
+
     //添加的任务统一进行初始化
     osal_Task_init();
 
@@ -31,4 +35,3 @@ int osal_main(void)
     //启动osal系统，不会再返回
     osal_start_system();
 }
-

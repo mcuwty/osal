@@ -1,7 +1,7 @@
 #ifndef OSAL_H
 #define OSAL_H
 
-#include "type.h "
+#include "type.h"
 
 typedef struct
 {
