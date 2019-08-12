@@ -1,0 +1,8 @@
+# -*- python -*-
+
+osal_files = find_files(['app', 'hal', 'osal'], '*.c')
+
+global_options(['-W', '-g', '-O0', '-std=gnu11'], lang='c')
+global_link_options(['-pthread'])
+
+executable('osal_test', files=osal_files, includes=['osal', 'hal', 'app'], compile_options=['-Wall'], lang='c')
