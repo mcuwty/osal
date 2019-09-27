@@ -28,7 +28,7 @@ static pthread_t hal_timer_pthread_fd;
  * @param pro       [线程函数参数列表]
  * @return void*    [无]
  */
-static void *hal_timer_pthread(void *pro)
+static void* hal_timer_pthread(void *pro)
 {
     pro = pro;
     while(1)
@@ -36,6 +36,8 @@ static void *hal_timer_pthread(void *pro)
         usleep(10 * 1000);      //10ms的心跳
         osal_update_timers();
     }
+
+    return 0;
 }
 
 /**
